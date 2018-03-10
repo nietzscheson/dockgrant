@@ -1,12 +1,12 @@
+- hosts: localhost
+  gather_facts: no
+  become: yes
+  #connection: local
+  roles:
+    - ansible/roles/localhost
+
 - hosts: all
-  gather_facts: false
-  become: true
-  tasks:
-  - name: Install software-properties-common
-    apt: name=software-properties-common state=latest
-  - name: Install ppa:ansible/ansible
-    apt_repository: repo="ppa:ansible/ansible" state=present
-  - name: Install Python 2
-    apt: name=python-minimal state=latest update_cache=yes
-  - name: Install Ansible
-    apt: name=ansible
+  gather_facts: no
+  become: yes
+  roles:
+   - ansible/roles/vagrant

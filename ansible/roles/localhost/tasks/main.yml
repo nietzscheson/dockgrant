@@ -1,0 +1,5 @@
+---
+- name: Start the ssh-agent in the background
+  shell: eval "$(ssh-agent -s)"
+- name: Add SSH
+  shell: ssh-add -K /path/to/.ssh/id_rsa
